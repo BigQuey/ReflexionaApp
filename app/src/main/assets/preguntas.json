@@ -1,0 +1,22 @@
+{
+  "Emociones": [
+    "¿Cómo te sentiste hoy?",
+    "¿Qué emoción predominó en tu día?",
+    "¿Hubo algo que te hizo sonreír?"
+  ],
+  "Autoestima": [
+    "¿Qué hiciste bien hoy?",
+    "¿De qué te sientes orgulloso?",
+    "¿Qué parte de ti admiras más?"
+  ],
+  "Propósitos": [
+    "¿Qué objetivo tuviste hoy?",
+    "¿Lo cumpliste? ¿Por qué sí o no?",
+    "¿Qué podrías mejorar mañana?"
+  ],
+  "Relaciones": [
+    "¿Con quién hablaste más hoy?",
+    "¿Te sentiste comprendido?",
+    "¿Hubo algún conflicto o conexión especial?"
+  ]
+}

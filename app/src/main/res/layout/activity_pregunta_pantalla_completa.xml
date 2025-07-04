@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8FF">
+
+    <!-- Ícono -->
+    <ImageView
+        android:id="@+id/ivIconoCategoria"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_emocional"
+    android:layout_marginTop="16dp"
+    android:contentDescription="Icono categoría" />
+
+    <!-- Texto categoría -->
+    <TextView
+        android:id="@+id/tvCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emocional"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#333" />
+
+    <!-- Pregunta -->
+    <TextView
+        android:id="@+id/tvPregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Cómo te sientes hoy?"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:textColor="#444"/>
+
+    <!-- Caja de texto estilo tarjeta -->
+    <EditText
+        android:id="@+id/etRespuesta"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_respuesta"
+        android:gravity="top|start"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:hint="Escribe tu respuesta aquí..."
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:textColor="#000"
+        android:textColorHint="#999"/>
+
+    <!-- Botón siguiente -->
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:text="SIGUIENTE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_boton_siguiente"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+</LinearLayout>
