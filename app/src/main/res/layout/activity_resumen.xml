@@ -1,56 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#F7F4FF"
-    android:padding="24dp"
-    android:gravity="center_horizontal"
+    android:background="#FDF8F4"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
 
+    <!-- Título decorativo con emoji -->
     <TextView
-        android:text="Resumen Semanal"
-        android:textSize="22sp"
+        android:text="📝 Resumen Semanal"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="#4B0082"
-        android:layout_marginBottom="16dp"
+        android:textColor="#6A1B9A"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- Botón Analizar -->
     <Button
         android:id="@+id/btnAnalizar"
-        android:text="Analizar Semana"
-        android:backgroundTint="#9575CD"
-        android:textColor="#FFFFFF"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp" />
+        android:text="Analizar Semana"
+        android:backgroundTint="#BA68C8"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:layout_marginBottom="20dp"
+        android:padding="12dp"
+        android:elevation="4dp" />
 
+    <!-- Scroll con tarjeta de resumen -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/bg_tarjeta_resumen"
+        android:padding="18dp"
+        android:elevation="2dp"
+        android:layout_marginBottom="20dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical">
 
         <TextView
             android:id="@+id/tvResumen"
-            android:padding="16dp"
-            android:background="@drawable/bg_tarjeta_resumen"
-            android:textColor="#333333"
-            android:textSize="16sp"
-            android:lineSpacingExtra="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Aquí aparecerá tu resumen reflexivo..."
-            android:fontFamily="serif"
-            android:textIsSelectable="true" />
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="6dp"
+            android:textIsSelectable="true"
+            android:fontFamily="serif" />
     </ScrollView>
+
+    <!-- Botón Compartir -->
     <Button
         android:id="@+id/btnCompartir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Compartir Resumen"
         android:backgroundTint="#81C784"
         android:textColor="#FFFFFF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:elevation="4dp" />
+
+    <!-- Cargando -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -58,3 +76,4 @@
         android:layout_marginTop="16dp"
         android:visibility="gone" />
 </LinearLayout>
+

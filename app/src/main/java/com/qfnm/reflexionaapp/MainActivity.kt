@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.qfnm.reflexionaapp.auth.CuentaActivity
 import com.qfnm.reflexionaapp.diario.DiarioActivity
 import com.qfnm.reflexionaapp.diario.DiarioListaActivity
 import com.qfnm.reflexionaapp.estadisticas.EstadisticasActivity
@@ -60,6 +61,8 @@ class MainActivity : AppCompatActivity() {
 
         val opEstadisticas = findViewById<LinearLayout>(R.id.opEstadisticas)
         val opResumenPreguntas = findViewById<LinearLayout>(R.id.opResumenPreguntas)
+        val opConfiguracion = findViewById<LinearLayout>(R.id.opConfiguracion)
+        val opCuenta = findViewById<LinearLayout>(R.id.opMenuCuenta)
         configurarOpcion(opDiario, "Mi Diario", "Exprésate libremente sobre tu día", R.drawable.baseline_menu_book_24)
         configurarOpcion(opHistorial, "Mi Historial", "Revisa tus días pasados", R.drawable.outline_calendar_month_24)
         configurarOpcion(opResumen, "Preguntas", "Comenzemos con las preguntas", R.drawable.outline_diversity_2_24)
@@ -67,6 +70,8 @@ class MainActivity : AppCompatActivity() {
 
         configurarOpcion(opEstadisticas, "Estadísticas", "Visualiza tu progreso", R.drawable.outline_bar_chart_24)
         configurarOpcion(opResumenPreguntas,"Crear Resumen","Ve el resumen de tu respuestas",R.drawable.outline_autorenew_24 )
+        configurarOpcion(opConfiguracion, "Configuracion","Actualiza tu configuracion", R.drawable.outline_rule_settings_24)
+        configurarOpcion(opCuenta,"Cuenta / Cerrar Sesión", "Observa tus datos o Cambia de cuenta", R.drawable.baseline_assignment_ind_24)
         //BOTON DE PREGUNTAS DIARIAS
         opResumen.setOnClickListener {
             val preguntas = PreguntaProvider.cargarPreguntas(this)
@@ -98,6 +103,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ResumenActivity::class.java))
         }
 
+        opConfiguracion.setOnClickListener {
+            startActivity(Intent(this, ConfiguracionInicialActivity::class.java))
+        }
+        opCuenta.setOnClickListener{
+            startActivity(Intent(this, CuentaActivity::class.java))
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)

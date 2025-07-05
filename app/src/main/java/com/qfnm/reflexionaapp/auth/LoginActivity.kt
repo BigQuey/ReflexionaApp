@@ -1,5 +1,6 @@
 package com.qfnm.reflexionaapp.auth
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.qfnm.reflexionaapp.MainActivity
+import com.qfnm.reflexionaapp.utils.sincronizarFirestoreASQLite
 
 
 class LoginActivity : AppCompatActivity() {
@@ -63,6 +65,14 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                             // Ir a pantalla principal
+                            val prefs = getSharedPreferences("config", Context.MODE_PRIVATE)
+                            val yaSincronizado = prefs.getBoolean("sincronizacionHecha", false)
+
+                            if (!yaSincronizado) {
+                                sincronizarFirestoreASQLite(this) {
+                                    Toast.makeText(this, "Datos sincronizados desde la nube", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                             startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         } else {
@@ -87,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
         )
 
         db.collection("usuarios").document(usuario.uid)
-            .set(datosUsuario, SetOptions.merge()) // merge evita sobrescribir si ya existe
+            .set(datosUsuario, SetOptions.merge())
             .addOnSuccessListener {
                 Log.d("Firestore", "Usuario guardado correctamente")
             }

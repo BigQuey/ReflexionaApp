@@ -15,7 +15,10 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.google.firebase.auth.FirebaseAuth
+
 class EstadisticasActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     private lateinit var tvResumenEstadisticas: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,12 +34,19 @@ class EstadisticasActivity : AppCompatActivity() {
         val diasUnicos = respuestas.map { it.fecha }.distinct()
         val totalDias = diasUnicos.size
 
+        auth = FirebaseAuth.getInstance()
+        val usuario = auth.currentUser
+//        if (usuario != null) {
+//            tvBienvenida.text = "Hola, ${usuario.displayName ?: "usuario"} 👋"
+//        }
+
         val totalPalabras = respuestas.sumOf {
             it.respuesta.split("\\s+".toRegex()).size
         }
         val promedioPalabras = if (totalRespuestas > 0) totalPalabras / totalRespuestas else 0
 
         val resumen = """
+            👤 usuario : ${usuario?.displayName ?: "usuario"}
             📅 Días con respuestas: $totalDias
             ✍️ Respuestas totales: $totalRespuestas
             📝 Promedio de palabras por respuesta: $promedioPalabras

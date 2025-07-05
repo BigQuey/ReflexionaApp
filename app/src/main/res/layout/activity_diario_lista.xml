@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:orientation="vertical"-->
-<!--    android:padding="16dp"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
 
-<!--    <Button-->
-<!--        android:id="@+id/btnAgregarNota"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Agregar nueva nota"-->
-<!--        android:layout_marginBottom="16dp" />-->
-
-<!--    <ListView-->
-<!--        android:id="@+id/lvFechas"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="1"/>-->
-<!--</LinearLayout>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#FFFDF7"
-    android:padding="16dp"
+    android:background="#E8F5E9"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btnAgregarNota"
-        android:text="Agregar nueva nota"
+        android:text="📝 Agregar nueva nota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#81C784"
+        android:backgroundTint="#66BB6A"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-medium"
+        android:elevation="6dp"
+        android:padding="14dp"
+        android:layout_marginBottom="20dp" />
+    <Button
+        android:id="@+id/btnBuscarNota"
+        android:text="Buscar Nota 🔍"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF8A65"
         android:textColor="#000000"
         android:layout_marginBottom="16dp" />
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/tvVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Todavía no has escrito ninguna nota.\n¡Haz tu primera reflexión hoy! 😊"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="#888888"
+        android:visibility="gone"
+        android:padding="16dp" />
     <ListView
         android:id="@+id/lvFechas"
-        android:divider="@null"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="12dp"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="4dp" />
+
 </LinearLayout>

@@ -118,8 +118,8 @@ class ResumenActivity : AppCompatActivity() {
 
     private fun enviarAApi(respuestas: List<RespuestaApi>) {
         val client = OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(90, TimeUnit.SECONDS)
+            .readTimeout(90, TimeUnit.SECONDS)
             .build()
 
         val api = Retrofit.Builder()

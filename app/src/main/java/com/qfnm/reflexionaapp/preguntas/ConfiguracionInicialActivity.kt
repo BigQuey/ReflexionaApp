@@ -34,6 +34,17 @@ class ConfiguracionInicialActivity : AppCompatActivity() {
         listaCategorias.adapter = adapter
         listaCategorias.choiceMode = ListView.CHOICE_MODE_MULTIPLE
 
+        val prefs = getSharedPreferences("config", Context.MODE_PRIVATE)
+        val cantidadGuardada = prefs.getInt("cantidadPreguntas", 3)
+        val categoriasGuardadas = prefs.getStringSet("categoriasElegidas", emptySet())
+        etCantidad.setText(cantidadGuardada.toString())
+
+        for (i in categorias.indices) {
+            if (categoriasGuardadas?.contains(categorias[i]) == true) {
+                listaCategorias.setItemChecked(i, true)
+            }
+        }
+
         btnGuardar.setOnClickListener {
             val cantidad = etCantidad.text.toString().toIntOrNull()
             if (cantidad == null || cantidad <= 0) {
@@ -59,9 +70,20 @@ class ConfiguracionInicialActivity : AppCompatActivity() {
                 .putStringSet("categoriasElegidas", seleccionadas)
                 .putBoolean("configHecha", true)
                 .apply()
+            Toast.makeText(this, "Configuración guardada", Toast.LENGTH_SHORT).show()
 
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            //SIN REUTILIZACION
+//            startActivity(Intent(this, MainActivity::class.java))
+//            finish()
+
+
+            //PARA REUTILIZARLO
+            if (!isTaskRoot) {
+                finish() // Solo cerramos la pantalla si se accedió desde menú
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
     }
 }

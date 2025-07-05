@@ -27,7 +27,7 @@ class PreguntaPantallaCompletaActivity : AppCompatActivity() {
     private lateinit var respuestas: MutableList<String>
     private var index = 0
 
-    private lateinit var ivIcono: ImageView
+    private lateinit var ivIcono: TextView
     private lateinit var tvCategoria: TextView
     private lateinit var tvPregunta: TextView
     private lateinit var etRespuesta: EditText
@@ -82,13 +82,13 @@ class PreguntaPantallaCompletaActivity : AppCompatActivity() {
 
         // Cambia el ícono según la categoría
         val icono = when (pregunta.categoria.lowercase()) {
-            "emociones" -> R.drawable.ic_emocional
-            "autoestima" -> R.drawable.ic_autoestima
-            "propósitos" -> R.drawable.ic_propositos
-            "relaciones" -> R.drawable.ic_relaciones
-            else -> R.drawable.ic_reflexion
+            "emociones" -> "💗"
+            "autoestima" -> "🤩"
+            "propósitos" -> "🏆"
+            "relaciones" -> "👥"
+            else -> "🧠"
         }
-        ivIcono.setImageResource(icono)
+        ivIcono.setText(icono)
     }
 
     private fun guardarRespuestas() {
@@ -106,7 +106,7 @@ class PreguntaPantallaCompletaActivity : AppCompatActivity() {
         // Guardar en SQLite
         dbHelper.guardarRespuestas(fecha, "", lista.map { it.pregunta to it.respuesta })
 
-        // Guardar en Firestore (opcional)
+        // Guardar en Firestore
         val uid = auth.currentUser?.uid ?: return
         val datosFirestore = mapOf(
             "fecha" to fecha,

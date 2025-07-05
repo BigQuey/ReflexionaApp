@@ -59,6 +59,14 @@
           }
         },
         {
+          "client_id": "571917567872-sb1pbdo669rva85orf6ivlpq8dak6ml1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qfnm.reflexionaapp",
+            "certificate_hash": "6b4533a82f98ef98084ba3dc10d5d25b6cfdd501"
+          }
+        },
+        {
           "client_id": "571917567872-hrn5bmsok96cerblbmm09h92rsrtagfd.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.SplashActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFF8E1"> <!-- Fondo amarillo pastel claro -->
+
+    <!-- Contenedor con apariencia de ventana flotante -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?android:colorBackground">
+        android:gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:elevation="12dp"
+        android:padding="36dp"
+        android:layout_margin="32dp"
+        android:clipToOutline="true"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:src="@drawable/ic_launcher_foreground"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
+        <!-- Emoji como logo -->
         <TextView
-            android:text="ReflexionaApp"
-            android:textSize="24sp"
+            android:id="@+id/logoApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            />
+            android:text="🌱"
+            android:textSize="80sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Nombre de la App -->
+        <TextView
+            android:id="@+id/tvNombreApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ReflexionaApp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#6A1B9A"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Subtítulo inspirador -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicia tu día reflexionando 🌞"
+            android:textColor="#5D4037"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textAlignment="center" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

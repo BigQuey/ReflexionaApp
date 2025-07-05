@@ -179,4 +179,11 @@ class AppDatabaseHelper(context: Context) : SQLiteOpenHelper(
                 Toast.makeText(context, "Eliminado localmente, pero falló en Firestore", Toast.LENGTH_SHORT).show()
             }
     }
+    // Borrar la BD local lo uso para el Logout
+    fun borrarTodo() {
+        val db = writableDatabase
+        db.delete("diario", null, null)
+        db.delete("respuesta", null, null)
+        db.close()
+    }
 }

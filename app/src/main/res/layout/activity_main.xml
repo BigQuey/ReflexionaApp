@@ -3,76 +3,115 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE0F9"
-    android:padding="24dp">
+    android:background="#EDE7F6"> <!-- Fondo lavanda claro -->
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:padding="24dp">
 
-        <!-- Título principal -->
-        <TextView
+        <!-- Cabecera decorativa -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="MENÚ PRINCIPAL"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#D1C4E9"
+            android:padding="8dp"
             android:layout_marginBottom="24dp"
-            android:text="MI DIARIO SEMANAL"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:elevation="4dp"
+            android:clipToPadding="false">
 
-        <include layout="@layout/item_opcion"
+            <!-- Emoji decorativo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌤️"
+                android:textSize="60sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Título principal -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MENÚ PRINCIPAL"
+                android:textAlignment="center"
+                android:textColor="#4A148C"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Subtítulo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MI DIARIO SEMANAL"
+                android:textAlignment="center"
+                android:textColor="#6A1B9A"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Opciones del menú -->
+        <include
+            layout="@layout/item_opcion"
             android:id="@+id/opResumenPreguntas"
-            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Opción: Mi Diario -->
-        <include layout="@layout/item_opcion"
+        <include
+            layout="@layout/item_opcion"
             android:id="@+id/opDiario"
-            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Opción: Mi Historial -->
-        <include layout="@layout/item_opcion"
+        <include
+            layout="@layout/item_opcion"
             android:id="@+id/opHistorial"
-            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Opción: Resumen Semanal -->
-        <include layout="@layout/item_opcion"
+        <include
+            layout="@layout/item_opcion"
             android:id="@+id/opResumen"
-            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Opción: Recordatorios -->
-        <include layout="@layout/item_opcion"
+        <include
+            layout="@layout/item_opcion"
             android:id="@+id/opRecordatorios"
-            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <include
+            layout="@layout/item_opcion"
+            android:id="@+id/opEstadisticas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+        <!-- Opción COnfig        -->
+        <include layout="@layout/item_opcion"
+            android:id="@+id/opConfiguracion"
+            android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-
-        <!-- Opción: Estadísticas -->
+        <!-- Opción Salir -->
         <include layout="@layout/item_opcion"
-            android:id="@+id/opEstadisticas"
-            android:layout_marginBottom="24dp"
+            android:id="@+id/opMenuCuenta"
+            android:layout_marginBottom="32dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>
+
+
+

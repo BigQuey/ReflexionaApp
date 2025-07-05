@@ -1,17 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#E0F7FA"> <!-- Fondo azul muy claro -->
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btnGoogleSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!-- Tarjeta contenedora con fondo blanco y bordes redondeados simulados -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="28dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_margin="8dp"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:outlineProvider="bounds"
+        android:clipToOutline="true"
+        android:translationZ="6dp">
 
+        <!-- Ícono tipo logo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📘"
+            android:textSize="80sp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="serif" />
+
+        <!-- Bienvenida -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ Bienvenido a Mi Diario Semanal ✨"
+            android:textColor="#00796B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Frase inspiradora -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu espacio personal para escribir,\nrecordar y crecer cada día 🌿"
+            android:textColor="#004D40"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Botón Google Sign-In -->
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
-
